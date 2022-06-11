@@ -1,0 +1,2 @@
+2022-06-05 15:39:47 ---> Error en el query: ( You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '=  2022-06-05' at line 1 ) SELECT * FROM tendencias WHERE fecha ==  2022-06-05
+2022-06-05 15:40:52 ---> Error en el query: ( You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '=  "2022-06-05"' at line 1 ) SELECT * FROM tendencias WHERE fecha ==  "2022-06-05"

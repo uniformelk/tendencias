@@ -1,0 +1,9 @@
+2022-06-07 15:53:04 ---> Error de conexion: ( 1045) Access denied for user 'acomed_admin'@'localhost' (using password: YES)
+2022-06-07 15:53:41 ---> Error de conexion: ( 1045) Access denied for user 'acomed_admin'@'localhost' (using password: YES)
+2022-06-07 15:53:58 ---> Error de conexion: ( 1045) Access denied for user 'acomed_admin'@'localhost' (using password: YES)
+2022-06-07 15:55:36 ---> Error de conexion: ( 1045) Access denied for user 'acomed_admin'@'localhost' (using password: YES)
+2022-06-07 16:00:47 ---> Error de conexion: ( 2006) MySQL server has gone away
+2022-06-07 16:01:02 ---> Error de conexion: ( 2006) MySQL server has gone away
+2022-06-07 16:02:03 ---> Error de conexion: ( 2006) MySQL server has gone away
+2022-06-07 16:10:01 ---> Error de conexion: ( 2006) MySQL server has gone away
+2022-06-07 16:31:13 ---> Error de conexion: ( 1045) Access denied for user 'acomed_admin'@'localhost' (using password: YES)

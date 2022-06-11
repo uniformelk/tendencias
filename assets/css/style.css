@@ -1,0 +1,187 @@
+@font-face {
+  font-family: 'mariad';
+  src: local("mariad"), url("../fonts/MyriadPro-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'vanilla';
+  src: local("vanilla"), url("../fonts/Caramel_Vanilla.woff") format("woff");
+}
+
+:root {
+  --fuente-primaria: 'mariad';
+  --fuente-secundaria: 'vanilla';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.f-p {
+  font-family: 'vanilla';
+}
+
+.f-s {
+  font-family: var(--fuente-primaria);
+}
+
+.row {
+  width: 100%;
+  margin: 0;
+}
+
+.row .col-12 {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.d-flex {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .hero {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../img/hero.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+}
+
+@media (max-width: 768px) {
+  body .hero {
+    background-image: url("../img/hero-mobile.png");
+  }
+}
+
+body .categorias {
+  margin: 20px 0;
+}
+
+body .categorias .img-fluid-2 {
+  width: 6.5rem;
+  height: 6.5rem;
+}
+
+body .categorias .desktop {
+  display: block;
+}
+
+body .categorias .mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body .categorias .desktop {
+    display: none;
+  }
+  body .categorias .mobile {
+    display: block;
+  }
+}
+
+body .slider {
+  margin-top: 2rem;
+}
+
+body .slider .swiper .swiper-slide .dest {
+  padding: 20px;
+  background-color: #f15a24;
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .slider .swiper .swiper-slide .icon {
+  display: block;
+}
+
+body .slider .swiper .swiper-slide h4 {
+  padding-bottom: 10px;
+  border-bottom: 5px solid #000;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+body .slider .swiper .swiper-slide p {
+  padding: 0px;
+}
+
+@media (max-width: 768px) {
+  body .slider .swiper .swiper-slide .icon {
+    display: none;
+  }
+  body .slider .swiper .swiper-slide h4 {
+    min-height: auto;
+    text-align: center;
+  }
+  body .slider .swiper .swiper-slide p {
+    padding: 0 40px;
+  }
+}
+
+body .tendencias {
+  padding: 2rem 0;
+}
+
+body .tendencias .shadow-img {
+  background-image: url("../img/icons/back.png");
+  background-size: contain;
+  background-position: center;
+  padding: 10px;
+  background-repeat: no-repeat;
+}
+
+body .tendencias .img-tendencias {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+body .tendencias .col-3 {
+  margin: 20px 50px;
+}
+
+body .tendencias .text-start {
+  padding: 10px 20px;
+}
+
+body footer {
+  background-image: url("../img/hero-footer.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 80px 40px 80px;
+  color: #fff;
+}
+
+body footer p, body footer h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+body footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body footer a:hover {
+  color: #c406f6;
+}
+
+body footer .img-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+/*# sourceMappingURL=style.css.map */

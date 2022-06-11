@@ -1,0 +1,5 @@
+2022-06-05 22:45:01 ---> Error de conexion: ( 2003) Can't connect to MySQL server on '151.106.97.51' (111 "Connection refused")
+2022-06-05 22:45:46 ---> Error de conexion: ( 2003) Can't connect to MySQL server on '151.106.97.51' (111 "Connection refused")
+2022-06-05 22:51:25 ---> Error de conexion: ( 2003) Can't connect to MySQL server on '151.106.97.51' (111 "Connection refused")
+2022-06-05 22:52:16 ---> Error de conexion: ( 1044) Access denied for user 'acomed_camilo'@'localhost' to database 'acomed_tendencias'
+2022-06-05 22:53:36 ---> Error de conexion: ( 1044) Access denied for user 'acomed_acomedi'@'localhost' to database 'acomed_tendencias'
