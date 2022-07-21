@@ -184,4 +184,54 @@ body footer .img-icon {
   border-radius: 50%;
   margin: 0 5px;
 }
+
+.altura{
+  min-height: 200px;
+}
+.icon{
+  height: 170px;
+}
+.btn-success{
+  background-image: url('../img/title.png');
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  border: 1px solid #fff;
+  font-family: var(--fuente-secundaria);
+  width: 150px;
+  
+}
+.btn-success:hover{
+  background-image: url('../img/hero-footer.png');
+  background-position: left;
+  background-color: transparent;
+  border: none;
+  transition: all .5s ease-in;
+}
+.bg-success{
+  background-image: url('../img/hero-footer.png');
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  font-family: var(--fuente-secundaria);
+  background-color: transparent!important;
+}
+.icon-sup{
+  position: absolute;
+  right: 28%;
+  width: 10%;
+  top: 2%;
+}
+.modal-noticias{
+  background-color: rgba(241, 90, 36, .5);
+  width: 90%!important;
+}
+@media(max-width:768px){
+  .modal-noticias{
+    background-color: rgba(241, 90, 36, .5);
+    width: 100%!important;
+  }
+}
+
+
 /*# sourceMappingURL=style.css.map */

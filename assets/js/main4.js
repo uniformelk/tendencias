@@ -10,6 +10,9 @@ const btnMarketing = document.querySelector('marketing');
 
 $(document).ready(function(){
   consultaNoticias();
+  /*setTimeout(() => {
+    $("#modalNoticias").modal("show");
+  }, 1000);*/
 
 function consultaNoticias(){
   $.ajax({
@@ -17,7 +20,7 @@ function consultaNoticias(){
     type: "POST",
     url: "includes/functions/query.php",
     data: {
-
+      flag: 1
     },
     dataType: 'json',
     //beforeSend: function (){},
@@ -39,7 +42,39 @@ function consultaNoticias(){
 
     },
 
-});
+  });
+}
+
+function consultaNoticia(id){
+  $.ajax({
+    async: true,
+    type: "POST",
+    url: "includes/functions/query.php",
+    data: {
+      flag: 2,
+      id: id
+    },
+    dataType: 'json',
+    //beforeSend: function (){},
+    error: function (request, status, error){
+        alert(request.responseText);
+    },
+    success: function (respuesta){
+        switch(respuesta.estado){
+            case 1:
+
+                mostrarNoticia(respuesta.data['datos']);
+            break;
+            case 2:
+              console.log("error")
+                alert(error.mensaje)
+            break;
+        }
+
+
+    },
+
+  });
 }
 
 function mostrarNoticias(datos){
@@ -52,7 +87,7 @@ function mostrarNoticias(datos){
   slider.classList.add('swiper-wrapper');
   var icon = '';
   for(var i=0; i<datos.length;i++){
-    const {nombre, texto, categoria, fecha, imagen, tipo, extracto} = datos[i];
+    const {nombre, texto, categoria, fecha, imagen, tipo, extracto, id} = datos[i];
     icon = obtenerIcon(categoria);
     if(tipo === 'Noticia'){
       slider.innerHTML += `
@@ -60,13 +95,15 @@ function mostrarNoticias(datos){
         <img src="${imagen}" alt="" class="dest">
         <div class="row p-2">
             <div class="col-12 col-lg-2 offset-0 offset-lg-1 text-center icon"><img src="assets/img/icons/${icon}" alt="" class="img-fluid"></div>
-            <div class="col-12 col-lg-8 mx-3">
+            <div class="col-12 col-lg-8 mx-3 altura">
                 <h4 class="fw-bold">${nombre}</h4>
                 <p>${extracto}</p>
-                
+            </div>
+            <div class="text-end mb-4">
+              <a class="btn btn-success ver-nota" id="${id}">Ver Más</a>
             </div>
         </div>
-      </div>`
+      </div>`;
     }
     if(tipo === 'Tendencia'){
       tendencia.innerHTML += `
@@ -78,6 +115,7 @@ function mostrarNoticias(datos){
               <h4 class="f-p">Tendencias</h4>
               <p class="fw-bold  f-s">${nombre}</p>
               <p class="text-center">${texto}</p>
+
           </div>
         </div>
       `
@@ -112,10 +150,10 @@ function mostrarNoticias(datos){
 
     },
     freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -131,12 +169,38 @@ verNota.forEach( boton =>{
   boton.addEventListener('click', seleccion)
 
 });
+}
 
 function seleccion(e){
   e.preventDefault();
 
-  console.log(e);
+  console.log(e.target.id);
+  consultaNoticia(e.target.id);
 }
+
+function mostrarNoticia(datos){
+  console.log($("#exampleModalLabel"));
+  const modal =  document.querySelector('#exampleModal');
+  modal.innerHTML = `
+  <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">${datos[0].nombre}</h5>
+    </div>
+    <div class="modal-body">
+      <div class="text-center mb-3">
+        <img src="${datos[0].imagen}" alt="${datos[0].nombre}" class="img-fluid w-50 ">
+        <img src="assets/img/icons/${obtenerIcon(datos[0].categoria)}" alt="${datos[0].categoria}" class="img-fluid icon-sup">
+      </div>
+      ${datos[0].texto}
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+  `
+  $("#exampleModal").modal("show");
 }
 
 function obtenerIcon(cat){

@@ -13,7 +13,7 @@
 		private $logs;
 
 		public function __construct($logs){
-			$this->baseDatos = 'acomed_tendenciasa';
+			$this->baseDatos = 'noticias';
 			$this->usuario = 'root';
 			$this->clave = '';
 			$this->servidor = 'localhost';
